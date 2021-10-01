@@ -169,13 +169,13 @@ def decrypt_binary(ciphertext, key_1, key_2) :
 
     return plaintext
 
-a= encrypt("aku mau makan kokumi panggang", "helo","hobo")
-print(a)
-b = decrypt(a, "helo", "hobo")
-print(b)
-c= open('hello.txt', 'r') 
-inp_file = bytearray(c.read(), encoding='utf8')
-d= encrypt_binary(inp_file,  "helo", "hobo")
-print(d)
-f=decrypt_binary(d,  "helo", "hobo")
-print(f)
+# a= encrypt("aku mau makan kokumi panggang", "helo","hobo")
+# print(a)
+# b = decrypt(a, "helo", "hobo")
+# print(b)
+# c= open('hello.txt', 'r') 
+# inp_file = bytearray(c.read(), encoding='utf8')
+# d= encrypt_binary(inp_file,  "helo", "hobo")
+# print(d)
+# f=decrypt_binary(d,  "helo", "hobo")
+# print(f)

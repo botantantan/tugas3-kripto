@@ -27,7 +27,6 @@ def placebit(arr, num, pos,end=False):
     if posx + 3 > dim[0]:
         posx = 0
         posy += 1
-    # print(f"{num} placed in {posx},{posy}")
     for j in range(0,3):
         for i in range(0,3):
             if i==2 and j==2:
@@ -44,6 +43,7 @@ def placebit(arr, num, pos,end=False):
                 if arr[posx][posy + j][i] % 2 == 1:
                     arr[posx][posy + j][i] += 1
     return arr
+
 
 def stegano_encode(message, imarr):
     cx, cy = 0,0
@@ -78,7 +78,7 @@ def stegano_decode(imarr):
     return strret
 #     return bits
 
-def placebitacak(imarr, num, pos, end=False):
+def placebitacak(arr, num, pos, end=False):
     x = bitly(num)
     posx, posy = pos
     dim = arr.shape
@@ -128,15 +128,19 @@ def stegano_acak(message, imarr):
 def stegano_acak_decode(imarr):
     arr = imarr.flatten()
     bits = []
+    found = False
     for i in range(0,len(arr),9):
         x = [0 if x % 2 == 0 else 1 for x in arr[i:i+9]]
         if x[8] == 0:
             bits.append(x[:8])
 #         print(arr[:9])
-        if x[:8] == [1,1,1,1,1,1,1,1,1]:
+        if x[:8] == [1,1,1,1,1,1,1,1]:
 #             print(len(bits))
 #             print(bits)
+            found = True
             break
+    if not found:
+        return []
     ret = [chr(numly(bit)) for bit in bits]
     strret = ""
     for i in ret:
