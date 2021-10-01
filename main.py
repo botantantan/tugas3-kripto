@@ -5,12 +5,16 @@ from tkinter import filedialog
 filepath = ''
 
 def importFile():
-  file = filedialog.askopenfile(mode='r')
-  if file is not None:
-    fileContent = file.read()
+    # if mediaRadVar == 1:
+    #     name = filedialog.askopenfile()
 
-  inputText.delete('0.0', 'end')
-  inputText.insert('0.0', fileContent)
+    #     pass
+    file = filedialog.askopenfile(mode='r')
+    if file is not None:
+        fileContent = file.read()
+
+    inputText.delete('0.0', 'end')
+    inputText.insert('0.0', fileContent)
 
 def exportFile():
   out = outputText.get('0.0', 'end-1c')
