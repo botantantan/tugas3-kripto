@@ -112,10 +112,6 @@ def stegano_acak(message, imarr):
                 imarr[i][j][2] += 1
     for i in range(len(message)):
         ch = message[i]
-#         if i == len(message)-1:
-#             end=True
-#         else:
-#         end=False
         imarr = placebitacak(imarr,ord(ch),(cx,cy),False)
         cy += random.randint(1,5)*3
         if cy+3 > dim[1]:
